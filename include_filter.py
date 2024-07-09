@@ -39,10 +39,17 @@ def include(key, value, format, meta):
 def keepCodeBlockLanguage(key, value, format, meta):
     if key == "CodeBlock":
         [[ident, classes, kvs], code] = value
-        new_contents = [Para([RawInline("markdown", "```{}".format(classes[0]))])]
-        new_contents.append(Para([RawInline("markdown", code)]))
-        new_contents.append(Para([RawInline("markdown", "```")]))
-        return new_contents
+        assert ident == ""
+        assert kvs == []
+        new_contents = []
+        if classes:
+            new_contents = [RawInline("markdown", "```{}\n".format(classes[0]))]
+        else:
+            new_contents = [RawInline("markdown", "```\n")]
+        
+        new_contents.append(RawInline("markdown", code))
+        new_contents.append(RawInline("markdown", "\n```"))
+        return [Para(new_contents)]
 
 
 if __name__ == "__main__":
