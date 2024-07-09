@@ -38,6 +38,14 @@ wow
 - [ ] Update the website
 - [ ] Contact the media
 
+#### Indented code block in file 1
+* example
+
+        this.isSomeCode = true;
+
+*  
+        addMoreCode();
+
 ### End of file 1
 
 ---------
