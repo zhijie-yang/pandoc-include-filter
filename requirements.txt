@@ -1,0 +1,4 @@
+pandoc
+pandoc-include
+pandocfilters
+panflute==1.12.5

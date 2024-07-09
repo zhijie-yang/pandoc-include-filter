@@ -1,0 +1,21 @@
+doc:
+	pandoc README.md -o README.md --filter include_filter.py
+
+test:
+	pandoc README.md -o README.1.md --filter pandoc_include.py
+	pandoc README.1.md -o README.2.md --filter pandoc_include.py
+	diff README.1.md README.2.md
+
+venv:
+	python3 -m venv venv
+	source /venv/bin/activate
+
+.PHONY: doc test deps clean
+
+deps: venv
+	source /venv/bin/activate
+	pip3 install -r requirements.txt
+
+clean:
+	rm -rf venv
+	rm -f README.1.md README.2.md
