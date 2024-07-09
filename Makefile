@@ -2,8 +2,8 @@ doc:
 	pandoc README.md -o README.md --filter include_filter.py
 
 test:
-	pandoc README.md -o README.1.md --filter pandoc_include.py
-	pandoc README.1.md -o README.2.md --filter pandoc_include.py
+	pandoc README.md -o README.1.md --filter include_filter.py
+	pandoc README.1.md -o README.2.md --filter include_filter.py
 	diff README.1.md README.2.md
 
 venv:
