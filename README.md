@@ -31,6 +31,12 @@ All the contents within such <div> will be replaced by the contents of the file 
 The `<div>` stuff should not be rendered, but only kept in the source file.
 
 <div class="include" file="_common/docs/file1.md" start=5 end=100>
+
+<div class="include" file="_common/docs/file2.md">
+
+Something not important here.
+
+</div>
 </div>
 
 <div class="include" file="_common/docs/file2.md">

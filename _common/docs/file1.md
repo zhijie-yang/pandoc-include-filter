@@ -27,6 +27,12 @@ wow
 </div>
 ```
 
+### Include something from file 2
+
+<div class="include" file="file2.md">
+
+</div>
+
 #### Table in file 1
 | Syntax      | Description |
 | ----------- | ----------- |
