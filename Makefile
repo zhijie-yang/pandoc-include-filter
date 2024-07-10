@@ -8,12 +8,12 @@ test:
 
 venv:
 	python3 -m venv venv
-	source /venv/bin/activate
+	. venv/bin/activate
 
 .PHONY: doc test deps clean
 
 deps: venv
-	source /venv/bin/activate
+	. venv/bin/activate
 	pip3 install -r requirements.txt
 
 clean:
