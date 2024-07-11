@@ -52,5 +52,8 @@ def keepCodeBlockLanguage(key, value, format, meta):
         return [Para(new_contents)]
 
 
+def main():
+    return toJSONFilters([include, keepCodeBlockLanguage])
+
 if __name__ == "__main__":
-    toJSONFilters([include, keepCodeBlockLanguage])
+    main()
